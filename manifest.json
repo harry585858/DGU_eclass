@@ -1,8 +1,13 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "ad remove",
+  "description": "Extension",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions":["scripting"],
+  "host_permissions":["<all_urls>"],
+  "background":{
+    "service_worker":"background.js"
+  },
   "action": {
     "default_popup": "hello.html",
     "default_icon": "hello_extensions.png"
