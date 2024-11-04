@@ -3,11 +3,18 @@ document.getElementById("runScriptButton").addEventListener("click", async () =>
   
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: yourFunction
+    function: eclasstime
   });
 });
-
-function yourFunction() {
+document.getElementById("attendance").addEventListener("click", async () => {
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: attendancemod
+  });
+});
+function eclasstime() {
   // 여기에서 JavaScript 코드를 작성합니다.
  var inp = parseInt(prompt("시청시간 초단위 입력"));
 
@@ -23,5 +30,7 @@ if (isNaN(inp)) {
     LessonWork.editStudyRecord(StudyRecordDTO, learningControl, O, editStudyRecordCallback);
     alert("실행되었습니다!");
 }
-  
+}
+function attendancemod(){
+    //출석수정
 }
