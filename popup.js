@@ -33,4 +33,6 @@ if (isNaN(inp)) {
 }
 function attendancemod(){
     //출석수정
+    alert("Course.do 위치인지 확인하세요");
+    
 }
